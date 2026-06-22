@@ -1,0 +1,50 @@
+# Twitter Sentiment Analysis
+
+An end-to-end machine learning project that classifies tweets as **Positive** or **Negative**,
+built with Python, Pandas, Scikit-learn, and Streamlit.
+
+## About the Dataset
+
+The dataset (`tweets.csv`) is the **Sentiment140** dataset containing 1.6 million tweets,
+labelled 0 (Negative) or 4 (Positive). Downloaded from [Kaggle](https://www.kaggle.com/datasets/kazanova/sentiment140).
+
+## Project Workflow
+
+1. **Data Cleaning** — Loaded the dataset, remapped labels (0/1), removed nulls, stripped URLs/mentions/special characters.
+2. **Exploratory Data Analysis (EDA)** — Visualized sentiment distribution and tweet length patterns by class.
+3. **Feature Engineering** — Applied TF-IDF vectorization (50k features, unigrams + bigrams) to convert text to numerical format.
+4. **Model Training** — Trained a Logistic Regression classifier.
+5. **Evaluation** — Achieved ~79% accuracy; analyzed confusion matrix and classification report.
+6. **Deployment** — Built an interactive Streamlit app for real-time sentiment prediction.
+
+## Tools Used
+
+- Python
+- Pandas
+- Seaborn & Matplotlib
+- Scikit-learn
+- Streamlit
+- Joblib
+
+## How to Run
+
+```bash
+pip install pandas scikit-learn streamlit joblib seaborn matplotlib
+streamlit run app.py
+```
+
+## Files
+
+| File | Description |
+|------|-------------|
+| `sentiment_analysis.ipynb` | Full notebook: EDA, cleaning, training, evaluation |
+| `app.py` | Streamlit web app |
+| `sentiment_model.pkl` | Saved Logistic Regression model |
+| `tfidf_vectorizer.pkl` | Saved TF-IDF vectorizer |
+| `tweets.csv` | Sentiment140 dataset |
+
+## Key Takeaway
+
+Tweets with personal anecdotes, exclamations, and positive words predict positive sentiment reliably.
+Short angry tweets with negations are strong signals of negativity. TF-IDF bigrams capture phrases like
+"not good" or "love this" that single words miss.
