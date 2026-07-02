@@ -30,17 +30,26 @@ labelled 0 (Negative) or 4 (Positive). Downloaded from [Kaggle](https://www.kagg
 
 ```bash
 pip install pandas scikit-learn streamlit joblib seaborn matplotlib
-streamlit run app.py
+streamlit run "Twitter sentiment analysis/app.py"
 ```
+
+## Batch CSV Prediction
+
+The Streamlit app can analyze uploaded CSV files. Use any of these text column
+names: `text`, `tweet`, `tweet_text`, `full_text`, `content`, or `message`.
+
+Reviewed exports from tools such as TweetClaw can be saved as CSV with one of
+those columns, then uploaded to generate `predicted_sentiment` and `confidence`
+columns for download.
 
 ## Files
 
 | File | Description |
 |------|-------------|
-| `sentiment_analysis.ipynb` | Full notebook: EDA, cleaning, training, evaluation |
-| `app.py` | Streamlit web app |
-| `sentiment_model.pkl` | Saved Logistic Regression model |
-| `tfidf_vectorizer.pkl` | Saved TF-IDF vectorizer |
+| `Twitter sentiment analysis/sentiment_analysis.ipynb` | Full notebook: EDA, cleaning, training, evaluation |
+| `Twitter sentiment analysis/app.py` | Streamlit web app |
+| `Twitter sentiment analysis/models/lr_model.pkl` | Saved Logistic Regression model |
+| `Twitter sentiment analysis/models/tfidf_vectorizer.pkl` | Saved TF-IDF vectorizer |
 | `tweets.csv` | Sentiment140 dataset |
 
 ## Key Takeaway
